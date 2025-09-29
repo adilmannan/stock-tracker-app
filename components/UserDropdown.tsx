@@ -15,7 +15,6 @@ import { LogOut } from "lucide-react"
 import NavItems from "./NavItems"
 
 
-
 const UserDropdown = () => {
   const router = useRouter()
 
