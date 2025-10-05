@@ -18,10 +18,10 @@ if (!cached) {
 export const connectToDatabase = async () => {
   if (!MONGODB_URI) throw new Error("MONGODB_URI must be set within .env")
 
-  if(cached.conn) return cached.conn
+  if (cached.conn) return cached.conn
 
-  if(!cached.promise){
-    cached.promise = mongoose.connect(MONGODB_URI,{ bufferCommands: false})
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(MONGODB_URI, { bufferCommands: false })
   }
 
   try {
@@ -32,6 +32,6 @@ export const connectToDatabase = async () => {
   }
 
   console.log(`Connected to database ${process.env.NODE_ENV} ${MONGODB_URI}`);
-  
 
+  return cached.conn
 }
